@@ -1,0 +1,16 @@
+{
+	"name": "oda_fw_test",
+	"version": "0.0.1",
+	"homepage": "oda_fw_teste",
+	"authors": ["Fabrice Rosito <fabrice.rosito@gmail.com>"],
+	"description": "Pour tester ODA",
+	"license": "MIT",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules"
+	],
+	"dependencies": {
+	  "Oda" : "*"
+	}
+}

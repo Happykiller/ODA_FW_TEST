@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="img/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="bower_components/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+    </head>
+    <body>
+        <!-- JS -->
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="bower_components/lz-string/libs/lz-string.min.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Oda.js -->
+        <script src="gitOda/dist/Oda.js?modeExecution=mini"></script>
+        <script>
+            $.Oda.App.Controller = {
+                /**
+                 * @returns {$.Oda.App.Controller}
+                 */
+                start: function () {
+                    try {
+                        $.Oda.Log.info("Hello");
+                        return this;
+                    } catch (er) {
+                        $.Oda.Log.error("$.Oda.App.Controller.Home.start : " + er.message);
+                        return null;
+                    }
+                }
+            };
+
+            $.Oda.Event.addListener({name : "oda-fully-loaded", callback : function(e){
+                $.Oda.Display.Widget.load();
+                $.Oda.App.Controller.start();
+            }});
+        </script>
+
+        <oda-loading/>
+    </body>
+</html>
