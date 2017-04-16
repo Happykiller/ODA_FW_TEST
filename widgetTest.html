@@ -65,10 +65,9 @@
             };
 
             $.Oda.Event.addListener({name : "oda-fully-loaded", callback : function(e){
-
                 $.Oda.Display.Widget.load();
                 $.Oda.App.Controller.start();
-
+                $.Oda.Guidance.run();
             }});
         </script>
 
@@ -141,6 +140,23 @@
                     oda-input-select-response="elt.id"
                     oda-input-select-order="asc"
                     required/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <a href="#coucou" id="ici1">Ici</a>
+                <oda-guidance oda-guidance-id="ici1" oda-guidance-location="bottom" oda-guidance-next="true" oda-guidance-title="oda-main.guidance-label-avatar">
+                    <b><oda-label oda-label-value="oda-main.guidance-label-avatar"/></b>
+                </oda-guidance>
+            </div>
+            <div class="col-md-4">
+                <a href="#coucou" id="ici2">Ici</a>
+                <oda-guidance oda-guidance-id="ici2" oda-guidance-location="top">oda-main.guidance-label-avatar</oda-guidance>
+            </div>
+            <div class="col-md-4">
+                <a href="#coucou" id="ici3">Ici</a>
+                <oda-guidance oda-guidance-id="ici3" oda-guidance-location="top" oda-guidance-next="true">oda-main.guidance-label-avatar</oda-guidance>
             </div>
         </div>
 
